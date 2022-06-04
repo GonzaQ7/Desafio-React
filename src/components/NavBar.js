@@ -1,4 +1,7 @@
+import CartWidget from "./CartWidget";
+
 const NavBar = () =>{
+
 return(
 
     <nav class="navbar navbar-expand-lg bg-light">
@@ -22,6 +25,7 @@ return(
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Contacto</a>
                     </li>
+                    <CartWidget/>
                 </ul>
             </div>
         </div>
