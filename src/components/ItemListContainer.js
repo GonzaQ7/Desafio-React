@@ -1,6 +1,19 @@
-const ItemListContainer = () => {
+import ItemCount from "./ItemCount"
+
+const onAdd = () => {};
+
+const ItemListContainer = ({greetings}) => {
     return (
-        <h2>Stock</h2>
+        <>
+        <div>
+            <h2>{greetings}</h2>
+        <ItemCount 
+        stock = {5} onAdd = {onAdd} initial = {1}
+        />
+        </div>
+        
+        </>
+        
     )
 }
 
