@@ -1,32 +1,26 @@
 import { useState } from "react";
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({ stock }) => {
+  const [count, setCount] = useState(0);
 
-    const [contador, setContador] = useState(initial)
-
-    const aumentarContador = () => {
-        if (contador < stock) {
-            setContador(contador + 1)
-        }
+  function adding() {
+    if (count < stock) {
+      setCount(count + 1);
     }
+  }
 
-    const bajarContador = () => {
-        if (contador > 0) {
-        setContador(contador - 1)
+  function subs() {
+    if (count > 0) {
+      setCount(count - 1);
     }
-    }
-
-    return (
-        <>
-        <div className=" d-grid btn-group">
-          <p className="fs-1">El contador va : {contador}</p>
-          <button className="btn btn-outline-primary btn-lg" onClick={aumentarContador}>Aumentar</button>
-          <button className="btn btn-outline-primary btn-lg" onClick={bajarContador}>Disminuir</button>
-          <button className="btn btn-outline-success btn-lg" onClick={onAdd}>Confirmar</button>
-        </div>
-        </>
-      )
-
-}
+  }
+  return (
+    <div>
+      <button onClick={subs}>-</button>
+      <span>{count}</span>
+      <button onClick={adding}>+</button>
+    </div>
+  );
+};
 
 export default ItemCount;
