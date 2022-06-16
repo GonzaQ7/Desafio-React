@@ -1,21 +1,17 @@
 import { useState, useEffect } from "react";
 import products from "../utils/products";
 import customFetch from "../utils/customFetch";
-import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
 
-const ItemListContainer = () => {
+const ItemDetailContainer = () => {
   const [items, setItems] = useState([]);
   useEffect(() => {
     customFetch(1000, products).then((result) => setItems(result));
   }, [items]);
 
-  return (
-    <>
-      <div className="item-list-container">
-        <ItemList products={items} />
-      </div>
-    </>
-  );
+  console.log(items[0]);
+
+  return <ItemDetail products={items} />;
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;
