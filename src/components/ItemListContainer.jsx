@@ -1,20 +1,25 @@
-import { useState, useEffect } from "react";
-import products from "../utils/products";
-import customFetch from "../utils/customFetch";
+import React, { useEffect, useState } from "react";
 import ItemList from "./ItemList";
+import { traerProductos } from "../utils/product";
 
-const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
+const ItemListContainer = ({ saludo }) => {
+  const [products, setProducts] = useState([]);
+
   useEffect(() => {
-    customFetch(1000, products).then((result) => setItems(result));
-  }, [items]);
+    traerProductos()
+      .then((res) => {
+        setProducts(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
-    <>
-      <div className="item-list-container">
-        <ItemList products={items} />
-      </div>
-    </>
+    <div>
+      <h2>{saludo}</h2>
+      <ItemList items={products} />
+    </div>
   );
 };
 

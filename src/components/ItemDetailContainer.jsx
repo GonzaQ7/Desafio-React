@@ -1,17 +1,22 @@
-import { useState, useEffect } from "react";
-import products from "../utils/products";
-import customFetch from "../utils/customFetch";
+import React from "react";
+import { useEffect, useState } from "react";
+import { traerProducto } from "../utils/product";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState([]);
+  const [product, setProduct] = useState({});
+
   useEffect(() => {
-    customFetch(1000, products).then((result) => setItems(result));
-  }, [items]);
+    traerProducto()
+      .then((res) => {
+        setProduct(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-  console.log(items[0]);
-
-  return <ItemDetail products={items} />;
+  return <ItemDetail product={product} />;
 };
 
 export default ItemDetailContainer;

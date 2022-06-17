@@ -1,15 +1,14 @@
 import React from "react";
 import ItemCount from "./ItemCount";
 
-function Item({ id, name, image, stock, description }) {
+const Item = ({ item }) => {
   return (
     <div>
-      <h1>{name}</h1>
-      <img src={image} alt={id} />
-      <h2>{description}</h2>
-      <ItemCount stock={stock} />
+      <img src={item.image} alt="producto" />
+      <h2>{item.name}</h2>
+      <h3>${item.price}</h3>
     </div>
   );
-}
+};
 
 export default Item;

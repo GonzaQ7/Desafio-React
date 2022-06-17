@@ -5,7 +5,7 @@ const NavBar = () => {
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          PC HARDWARE
+          BOCA SHOP
         </a>
         <button
           className="navbar-toggler"
@@ -22,22 +22,22 @@ const NavBar = () => {
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
-                Inicio
+                INICIO
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
-                Sobre Nosotros
+                CAMISETAS
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link active " aria-current="page" href="#">
-                Nuestros Productos
+                SHORTS
               </a>
             </li>
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="#">
-                Contacto
+                CONJUNTOS
               </a>
             </li>
             <CartWidget />

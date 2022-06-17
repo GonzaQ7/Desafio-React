@@ -1,18 +1,17 @@
 import React from "react";
-import Item from "./Item";
+import ItemCount from "./ItemCount";
 
-function ItemDetail({ products }) {
-  return products.map((p) => (
-    <>
-      <Item
-        id={p.id}
-        name={p.name}
-        description={p.description}
-        image={p.image}
-        stock={p.stock}
-      />
-    </>
-  ));
-}
+const ItemDetail = ({ product }) => {
+  return (
+    <div>
+      <img src={product.image} alt={product.name} />
+      <h1>{product.name}</h1>
+      <h2>${product.price}</h2>
+      <h3>Stock: {product.stock}</h3>
+      <p>{product.description}</p>
+      <ItemCount stock={product.stock} initial={1} />
+    </div>
+  );
+};
 
 export default ItemDetail;
