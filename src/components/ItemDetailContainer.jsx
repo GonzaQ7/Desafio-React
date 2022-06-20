@@ -1,22 +1,24 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { traerProducto } from "../utils/product";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getProductsById } from "../utils/customFetch";
 import ItemDetail from "./ItemDetail";
 
-const ItemDetailContainer = () => {
-  const [product, setProduct] = useState({});
+function ItemDetailContainer() {
+  const [product, setProduct] = useState();
+
+  const { id } = useParams();
 
   useEffect(() => {
-    traerProducto()
-      .then((res) => {
-        setProduct(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getProductsById(parseInt(id)).then((response) => {
+      setProduct(response);
+    });
   }, []);
 
-  return <ItemDetail product={product} />;
-};
+  return (
+    <div>
+      <ItemDetail {...product} />
+    </div>
+  );
+}
 
 export default ItemDetailContainer;

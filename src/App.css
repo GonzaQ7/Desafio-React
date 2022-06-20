@@ -1,0 +1,149 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Mukta", sans-serif;
+}
+
+.container-fluid {
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.nav-link {
+  color: #003169;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ITEM LIST*/
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin: "10px 20px";
+  text-align: center;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  height: 450px;
+  margin: 10px;
+  width: 375px;
+}
+
+.item h2 {
+  color: #003169;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.item:hover {
+  transform: scale(1.009);
+}
+
+.item-img {
+  text-align: center;
+  width: 300px;
+}
+
+.item-img-container {
+  border: 1px solid #949494;
+  border-radius: 5px;
+}
+
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.btn-detalle {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #003169;
+  border-radius: 15px;
+}
+
+.btn-detalle:hover {
+  color: #003169;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 1px solid #003169;
+}
+
+/* ITEM DETAIL */
+
+.item-detail {
+  padding-top: 80px;
+  margin-left: auto;
+  display: flex;
+  margin-right: auto;
+  width: 1300px;
+}
+
+.item-detail-img img {
+  width: 600px;
+  height: 600px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-right: 50px;
+}
+
+.item-detail-text h3 {
+  color: #949494;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.item-detail-text h1 {
+  color: #003169;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.item-detail-text h2 {
+  color: #003169;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.item-detail-text p {
+  letter-spacing: 1px;
+  color: #949494;
+}
+
+/* ITEM COUNT */
+
+.item-count button {
+  background-color: #fff;
+  color: #003169;
+  font-size: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: none;
+  font-weight: bold;
+}
+
+.item-count span {
+  font-size: 25px;
+  font-weight: bold;
+}
