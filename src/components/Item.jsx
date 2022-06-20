@@ -10,7 +10,7 @@ const Item = ({ id, name, image, price }) => {
       <div className="item-info">
         <h2>{name}</h2>
         <h3>${price}</h3>
-        <Link className="btn-detalle" to={`/detail/${id}`}>
+        <Link className="btn-detalle" to={`/item/${id}`}>
           Ver Detalle
         </Link>
       </div>
