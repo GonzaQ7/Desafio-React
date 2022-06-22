@@ -7,7 +7,6 @@ function ItemListContainer() {
   const [items, setItems] = useState([]);
 
   const { category } = useParams();
-  console.log(typeof category);
 
   useEffect(() => {
     if (!category) {
