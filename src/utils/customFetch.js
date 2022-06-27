@@ -2,24 +2,18 @@ import productos from "./productos";
 
 export const customFetch = () => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(productos);
-    }, 500);
+    resolve(productos);
   });
 };
 
 export const getProductsById = (id) => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(productos.find((prod) => prod.id === id));
-    }, 500);
+    resolve(productos.find((prod) => prod.id === id));
   });
 };
 
 export const getProductsByCategory = (category) => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(productos.filter((prod) => prod.category === category));
-    }, 500);
+    resolve(productos.filter((prod) => prod.category === category));
   });
 };
