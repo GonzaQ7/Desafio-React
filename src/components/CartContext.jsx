@@ -29,7 +29,7 @@ const CartProvider = ({ children }) => {
     return quantity;
   };
 
-  // Verifica si el producto ya fue agrgado al Cart
+  // Verifica si el producto ya fue agregado al Cart
   const isInCart = (id) => {
     return cartItems.some((item) => item.id === id);
   };
@@ -44,9 +44,37 @@ const CartProvider = ({ children }) => {
     setcartItems([]);
   };
 
+  // Subtotal
+
+  const obtenerSubtotal = (precio2, quantity) => {
+    let subtotal = 0;
+    subtotal = subtotal + precio2 * quantity;
+    return Number(subtotal);
+  };
+
+  // Total
+
+  const obtenerTotal = () => {
+    let total = 0;
+    cartItems.forEach((product) => {
+      total = total + product.price * product.quantity;
+    });
+
+    return Number(total);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cartItems, addItem, addItemNavBar, isInCart, removeItem, clear }}
+      value={{
+        cartItems,
+        addItem,
+        addItemNavBar,
+        isInCart,
+        removeItem,
+        clear,
+        obtenerSubtotal,
+        obtenerTotal,
+      }}
     >
       {children}
     </CartContext.Provider>
