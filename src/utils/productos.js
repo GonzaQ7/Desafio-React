@@ -1,6 +1,5 @@
 const productos = [
   {
-    id: 1,
     name: "Camiseta Titular Boca 2022",
     category: "camiseta",
     gender: "male",
@@ -12,7 +11,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/167198-1000-1000/GA7545_1.jpg?v=637667066197770000",
   },
   {
-    id: 2,
     name: "Camiseta Visitante Boca 2022",
     category: "camiseta",
     gender: "male",
@@ -24,7 +22,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/165651-1000-1000/GU1886_1.jpg?v=637630183276900000",
   },
   {
-    id: 3,
     name: "Camiseta Arquero Boca 2022",
     category: "camiseta",
     gender: "male",
@@ -36,7 +33,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/166887-1000-1000/GA7548_1.jpg?v=637643878568030000",
   },
   {
-    id: 4,
     name: "Tercera Camiseta Boca 2022",
     category: "camiseta",
     gender: "male",
@@ -48,7 +44,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/165311-1000-1000/GK3191_1.jpg?v=637533381589730000",
   },
   {
-    id: 5,
     name: "Camiseta Titular Boca 2021",
     category: "camiseta",
     gender: "male",
@@ -60,7 +55,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/155688-1000-1000/GL4175_1.png?v=637321717285170000",
   },
   {
-    id: 6,
     name: "Camiseta Visitante Boca 2021",
     category: "camiseta",
     gender: "male",
@@ -72,7 +66,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/163284-1000-1000/GI4682_1.jpg?v=637481279145200000",
   },
   {
-    id: 7,
     name: "Tercera Camiseta Boca 2021",
     category: "camiseta",
     gender: "male",
@@ -84,7 +77,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/156661-1000-1000/GH8644_1.png?v=637369120957700000",
   },
   {
-    id: 8,
     name: "Cuarta Camiseta Boca 2021",
     category: "camiseta",
     gender: "male",
@@ -96,7 +88,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/163263-1000-1000/GK3122_1.jpg?v=637480473473400000",
   },
   {
-    id: 9,
     name: "Camiseta Titular Boca 2022",
     category: "camiseta",
     gender: "female",
@@ -108,7 +99,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/167204-1000-1000/GA7546_1.jpg?v=637667070145130000",
   },
   {
-    id: 10,
     name: "Camiseta Visitante Boca 2022",
     category: "camiseta",
     gender: "female",
@@ -120,7 +110,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/165645-1000-1000/GU1887_1.jpg?v=637630183235200000",
   },
   {
-    id: 11,
     name: "Tercera Camiseta Boca 2022",
     category: "camiseta",
     gender: "female",
@@ -132,7 +121,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/165088-1000-1000/GK3096_1.jpg?v=637528056628400000",
   },
   {
-    id: 12,
     name: "Camiseta Alternativa Boca 2021",
     category: "camiseta",
     gender: "female",
@@ -144,7 +132,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/155660-1000-1000/GL4169_1.png?v=637321716792830000",
   },
   {
-    id: 13,
     name: "Tercera Camiseta Boca 2021",
     category: "camiseta",
     gender: "female",
@@ -156,7 +143,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/156666-1000-1000/GH8645_1.png?v=637369130664530000",
   },
   {
-    id: 14,
     name: "Cuarta Camiseta Boca 2021",
     category: "camiseta",
     gender: "female",
@@ -168,7 +154,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/163265-1000-1000/GK3276_1.jpg?v=637480478531830000",
   },
   {
-    id: 15,
     name: "Short Titular Boca 2022",
     category: "short",
     gender: "male",
@@ -180,7 +165,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/166906-1000-1000/GU1885_1.jpg?v=637643878758070000",
   },
   {
-    id: 16,
     name: "Short Visitante Boca 2022",
     category: "short",
     gender: "male",
@@ -192,7 +176,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/165662-1000-1000/GU1879_1.jpg?v=637630183392270000",
   },
   {
-    id: 17,
     name: "Short Arquero Boca 2022",
     category: "short",
     gender: "male",
@@ -204,7 +187,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/166896-1000-1000/GU1880_1.jpg?v=637643878656930000",
   },
   {
-    id: 18,
     name: "Tercer Short Boca 2022",
     category: "short",
     gender: "male",
@@ -216,7 +198,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/165076-1000-1000/GK3310_1.jpg?v=637528056474100000",
   },
   {
-    id: 19,
     name: "Short Titular Boca 2021",
     category: "short",
     gender: "male",
@@ -228,7 +209,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/155645-1000-1000/GL4167_1.png?v=637321716531230000",
   },
   {
-    id: 20,
     name: "Short Visitante Boca 2021",
     category: "short",
     gender: "male",
@@ -240,7 +220,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/155649-1000-1000/GL4168_1.png?v=637321716607700000",
   },
   {
-    id: 21,
     name: "Tercer Short Boca 2021",
     category: "short",
     gender: "male",
@@ -252,7 +231,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/156659-1000-1000/GH8509_1.png?v=637369115371070000",
   },
   {
-    id: 22,
     name: "Cuarto Short Boca 2021",
     category: "short",
     gender: "male",
@@ -264,7 +242,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/163273-1000-1000/GN8856_1.jpg?v=637480496366600000",
   },
   {
-    id: 23,
     name: "Conjunto Boca Titular",
     category: "conjunto",
     gender: "male",
@@ -276,7 +253,6 @@ const productos = [
       "https://bocashop.vteximg.com.br/arquivos/ids/155781-1000-1000/GL7512_1.png?v=637321718854970000",
   },
   {
-    id: 24,
     name: "Conjunto Boca Alternativo",
     category: "conjunto",
     gender: "male",

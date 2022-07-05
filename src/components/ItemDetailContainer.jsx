@@ -1,48 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProductsById } from "../utils/customFetch";
 import ItemDetail from "./ItemDetail";
-import MoonLoader from "react-spinners/MoonLoader";
-import { css } from "@emotion/react";
-
-const override = css`
-  display: block;
-  margin: 0 auto;
-`;
+import { doc, getDoc } from "firebase/firestore";
+import { collectionProd } from "../config/firebase";
 
 function ItemDetailContainer() {
-  const [product, setProduct] = useState();
-  const [loading, setLoading] = useState(true);
+  const [product, setProduct] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-    getProductsById(parseInt(id)).then((response) => {
-      setProduct(response);
+    const ref = doc(collectionProd, id);
+    getDoc(ref).then((response) => {
+      setProduct({
+        id: response.id,
+        ...response.data(),
+      });
     });
-  }, []);
+  }, [id]);
 
-  return (
-    <>
-      {loading ? (
-        <div className="moonloader-container">
-          <MoonLoader
-            color={"#034FC5"}
-            css={override}
-            loading={loading}
-            size={75}
-          />
-        </div>
-      ) : (
-        <div>
-          <ItemDetail {...product} />
-        </div>
-      )}
-    </>
-  );
+  return <ItemDetail {...product} />;
 }
 
 export default ItemDetailContainer;

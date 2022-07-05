@@ -1,53 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { customFetch, getProductsByCategory } from "../utils/customFetch";
+
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import MoonLoader from "react-spinners/MoonLoader";
-import { css } from "@emotion/react";
-
-const override = css`
-  display: block;
-  margin: 0 auto;
-`;
+import { getDocs, query, where } from "firebase/firestore";
+import { collectionProd } from "../config/firebase";
 
 function ItemListContainer() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const { category } = useParams();
+  const [products, setProducts] = useState([]);
+
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
+    const ref = categoryId
+      ? query(collectionProd, where("category", "==", categoryId))
+      : collectionProd;
 
-    if (!category) {
-      customFetch().then((response) => {
-        setItems(response);
+    getDocs(ref).then((response) => {
+      const products = response.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
       });
-    } else {
-      getProductsByCategory(category).then((response) => {
-        setItems(response);
-      });
-    }
-  }, [category]);
+      setProducts(products);
+    });
+  }, [categoryId]);
 
-  return (
-    <>
-      {loading ? (
-        <div className="moonloader-container">
-          <MoonLoader
-            color={"#034FC5"}
-            css={override}
-            loading={loading}
-            size={75}
-          />
-        </div>
-      ) : (
-        <ItemList products={items} />
-      )}
-    </>
-  );
+  //TRAER PRODUCTOS DE ARRAY DE OBJETOS
+  // const [items, setItems] = useState([]);
+
+  // const { category } = useParams();
+
+  // useEffect(() => {
+  //   setTimeout(() => {}, 1000);
+
+  //   if (!category) {
+  //     customFetch().then((response) => {
+  //       setItems(response);
+  //     });
+  //   } else {
+  //     getProductsByCategory(category).then((response) => {
+  //       setItems(response);
+  //     });
+  //   }
+  // }, [category]);
+
+  return <ItemList products={products} />;
 }
 
 export default ItemListContainer;
