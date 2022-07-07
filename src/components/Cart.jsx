@@ -2,8 +2,14 @@ import React from "react";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Link } from "react-router-dom";
+import Form from "./Form";
+import { db } from "../config/firebase";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { useState } from "react";
 
 function Cart() {
+  const [data, setData] = useState({ name: "", email: "", phone: "" });
+  const [orderId, setOrderId] = useState("");
   const {
     cartItems,
     removeItem,
@@ -12,6 +18,37 @@ function Cart() {
     obtenerTotal,
     addItemNavBar,
   } = useContext(CartContext);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const objOrden = {
+      buyer: {
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+      },
+      cartItems,
+      total: obtenerTotal(),
+      date: serverTimestamp(),
+    };
+
+    const ref = collection(db, "orders");
+    addDoc(ref, objOrden).then((response) => {
+      setOrderId(response.id);
+      clear();
+    });
+  };
+  if (orderId !== "") {
+    return <h1>Gracias por tu compra, tu número de compra es: {orderId}</h1>;
+  }
 
   return (
     <div>
@@ -64,9 +101,13 @@ function Cart() {
               </div>
             </div>
           </div>
+          <Form
+            handleChange={handleChange}
+            data={data}
+            handleSubmit={handleSubmit}
+          />
         </div>
       )}
-      ;
     </div>
   );
 }
