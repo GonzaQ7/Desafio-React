@@ -1,60 +1,46 @@
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
-      <div className="container-fluid">
-        <div className="icono-nav">
-          <li>
-            <Link className="navbar-brand" to="/">
-              BOCA SHOP
-            </Link>
-          </li>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div className="links-nav">
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <li>
-                  <Link className="nav-link" to="/">
-                    INICIO
-                  </Link>
-                </li>
-              </li>
-              <li className="nav-item">
+    <>
+      <div className="navbar-container">
+        <Navbar collapseOnSelect expand="lg" variant="">
+          <Container>
+            <div className="navbar-brand">
+              <Navbar.Brand as={Link} to="/">
+                BOCA SHOP
+              </Navbar.Brand>
+            </div>
+
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="me-auto"></Nav>
+
+              <Nav className="nav-item">
+                <Nav.Link className="nav-item" as={Link} to="/">
+                  INICIO
+                </Nav.Link>
                 <Link className="nav-link" to="category/camiseta">
                   CAMISETAS
                 </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="category/short">
+                <Nav.Link as={Link} to="category/short">
                   SHORTS
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="category/conjunto">
+                </Nav.Link>
+                <Nav.Link as={Link} to="category/conjunto">
                   CONJUNTOS
-                </Link>
-              </li>
-              <CartWidget />
-            </ul>
-          </div>
-        </div>
+                </Nav.Link>
+                <CartWidget />
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
       </div>
-    </nav>
+    </>
   );
 };
 

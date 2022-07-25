@@ -10,7 +10,6 @@ function ItemList({ products }) {
           <Item key={p.id} {...p} />
         ))}
       </div>
-      ;
     </>
   );
 }

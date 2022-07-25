@@ -8,7 +8,12 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 
 function Cart() {
-  const [data, setData] = useState({ name: "", email: "", phone: "" });
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    adress: "",
+  });
   const [orderId, setOrderId] = useState("");
   const {
     cartItems,
@@ -34,6 +39,7 @@ function Cart() {
         name: data.name,
         phone: data.phone,
         email: data.email,
+        adress: data.adress,
       },
       cartItems,
       total: obtenerTotal(),
@@ -46,69 +52,95 @@ function Cart() {
       clear();
     });
   };
-  if (orderId !== "") {
-    return <h1>Gracias por tu compra, tu número de compra es: {orderId}</h1>;
-  }
 
-  return (
-    <div>
-      {addItemNavBar() === 0 ? (
-        <div>
-          <div>
-            <h2>No hay elementos en tu carrito</h2>
-            <Link to="/" className="btn-detalle-compra">
-              Ir a la tienda
+  if (orderId !== "") {
+    return (
+      <>
+        <div className="compra-container">
+          <div className="compra">
+            <h1>Compra realizada con exito!</h1>
+            <h2>Su id de compra es: {orderId}</h2>
+            <h3 className="compra-detail">Datos del comprador: </h3>
+            <h3 className="compra-detail">Nombre: {data.name}</h3>
+            <h3 className="compra-detail">Email: {data.email}</h3>
+            <h3 className="compra-detail">Numero de telefono: {data.phone}</h3>
+            <h3 className="compra-detail">Direccion de envio: {data.adress}</h3>
+            <Link to="/" className="btn-eliminar">
+              Volver a la tienda
             </Link>
           </div>
         </div>
-      ) : (
-        <div>
-          {cartItems.map((product) => (
-            <div className="cart-item">
-              <div className="cart-item-img">
-                <img src={product.image} alt={product.name} />
-              </div>
-              <div className="cart-item-text">
-                <h1>{product.name}</h1>
-                <h3>Cantidad: {product.quantity}</h3>
-                <h2>Precio: ${product.price}</h2>
-                <p>{product.description}</p>
-                <p>
-                  Subtotal: ${obtenerSubtotal(product.price, product.quantity)}
-                </p>
-                <button
-                  className="btn-detalle-compra"
-                  onClick={() => removeItem(product.id)}
-                >
-                  Eliminar producto
-                </button>
-              </div>
-            </div>
-          ))}
+      </>
+    );
+  }
 
-          <div className="cart-item">
+  return (
+    <>
+      <div>
+        {addItemNavBar() === 0 ? (
+          <div className="empty-carrito">
             <div>
-              <button className="btn-detalle-compra" onClick={clear}>
-                Vaciar Carrito
-              </button>
-              <div className="cart-item-text">
+              <h2>No hay elementos en tu carrito</h2>
+              <Link to="/" className="btn-eliminar">
+                Volver a la tienda
+              </Link>
+            </div>
+          </div>
+        ) : (
+          <div className="cart-item-container">
+            <div className="cart-item-item">
+              {cartItems.map((product) => (
+                <div className="">
+                  <div className="cart-item">
+                    <div className="cart-item-img-container">
+                      <div className="cart-item-img">
+                        <img src={product.image} alt={product.name} />
+                      </div>
+                    </div>
+                    <div className="cart-item-text">
+                      <h1>{product.name}</h1>
+                      <h3>Cantidad: {product.quantity}</h3>
+                      <h2>Precio: ${product.price}</h2>
+                      <p>{product.description}</p>
+                      <p>
+                        Subtotal: $
+                        {obtenerSubtotal(product.price, product.quantity)}
+                      </p>
+                      <button
+                        className="btn-eliminar"
+                        onClick={() => removeItem(product.id)}
+                      >
+                        Eliminar producto
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="cart-item-detail">
+              <div className="cart-item-detail-text">
                 <p>Total: ${obtenerTotal()}</p>
-                <p>Cantidad de items:</p>
-                <p>{addItemNavBar()}</p>
-                <Link to="/" className="btn-detalle-compra">
-                  Seguir comprando
-                </Link>
+                <p>Cantidad de productos: {addItemNavBar()}</p>
+                <p>Ingrese sus datos: </p>
+                <Form
+                  handleChange={handleChange}
+                  data={data}
+                  handleSubmit={handleSubmit}
+                />
+                <div className="btn-detail">
+                  <Link to="/" className="btn-eliminar">
+                    Seguir comprando
+                  </Link>
+                  <button className="btn-eliminar" onClick={clear}>
+                    Vaciar Carrito
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-          <Form
-            handleChange={handleChange}
-            data={data}
-            handleSubmit={handleSubmit}
-          />
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+    </>
   );
 }
 

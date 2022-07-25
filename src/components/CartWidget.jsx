@@ -7,10 +7,14 @@ const CartWidget = () => {
   const { addItemNavBar } = useContext(CartContext);
   return (
     <>
-      <p>{addItemNavBar()}</p>
-      <Link to={`/cart`}>
-        <span className="material-symbols-outlined">shopping_cart</span>
-      </Link>
+      <div className="cart-widget">
+        <Link to={`/cart`}>
+          <span className="material-symbols-outlined">shopping_cart</span>
+        </Link>
+        <div className="p-container">
+          <p>{addItemNavBar()}</p>
+        </div>
+      </div>
     </>
   );
 };

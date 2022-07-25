@@ -26,25 +26,6 @@ function ItemListContainer() {
     });
   }, [categoryId]);
 
-  //TRAER PRODUCTOS DE ARRAY DE OBJETOS
-  // const [items, setItems] = useState([]);
-
-  // const { category } = useParams();
-
-  // useEffect(() => {
-  //   setTimeout(() => {}, 1000);
-
-  //   if (!category) {
-  //     customFetch().then((response) => {
-  //       setItems(response);
-  //     });
-  //   } else {
-  //     getProductsByCategory(category).then((response) => {
-  //       setItems(response);
-  //     });
-  //   }
-  // }, [category]);
-
   return <ItemList products={products} />;
 }
 

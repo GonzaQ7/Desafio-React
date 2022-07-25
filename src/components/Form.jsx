@@ -6,7 +6,7 @@ const Form = ({ handleChange, data, handleSubmit }) => {
       <form onSubmit={handleSubmit}>
         <input
           className="form-control sm"
-          placeholder="Nombre"
+          placeholder="Nombre y apellido"
           type="text"
           name="name"
           onChange={handleChange}
@@ -24,6 +24,24 @@ const Form = ({ handleChange, data, handleSubmit }) => {
         />
         <input
           className="form-control sm"
+          placeholder="Confirme su email"
+          type="email"
+          name="emailCheck"
+          onChange={handleChange}
+          value={data.emailCheck}
+          required
+        />
+        <input
+          className="form-control sm"
+          placeholder="Direccion de envio"
+          type="text"
+          name="adress"
+          onChange={handleChange}
+          value={data.adress}
+          required
+        />
+        <input
+          className="form-control sm"
           placeholder="Telefono"
           type="number"
           name="phone"
@@ -31,7 +49,12 @@ const Form = ({ handleChange, data, handleSubmit }) => {
           value={data.phone}
           required
         />
-        <button className="btn-detalle-compra">Finalizar compra</button>
+        <button
+          disabled={data.email !== data.emailCheck}
+          className="btn-eliminar"
+        >
+          Finalizar compra
+        </button>
       </form>
     </div>
   );

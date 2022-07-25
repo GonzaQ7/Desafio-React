@@ -28,7 +28,7 @@ const ItemDetail = ({ id, name, description, stock, price, image }) => {
         ) : (
           <div className="btn-container">
             <Link className="btn-detalle-compra" to={`/cart`}>
-              Terminar Compra
+              Ir al carrito
             </Link>
           </div>
         )}
