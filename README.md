@@ -12,6 +12,8 @@
 
 - **Desarrollador:** Gonzalo Daniel Quiroga Sassu
 
+- **Proyecto:** [Netlify](https://boca-ecommerce.netlify.app/)
+
 ## Fundamentación
 
 Para este proyecto me inspire en el sitio web oficial de adidas donde vendian indumentaria deportiva de Boca (club del que soy hincha),
