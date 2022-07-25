@@ -10,13 +10,11 @@
 
 - **Tutor/a:** Pilar Figueroa
 
-- **Desarrollado:** Gonzalo Daniel Quiroga Sassu
-
-- **Proyecto final:** [Netlify]
+- **Desarrollador:** Gonzalo Daniel Quiroga Sassu
 
 ## Fundamentación
 
-Para este proyecto me inspire en sitio web oficial de adidas donde vendian indumentaria deportiva de Boca (club del que soy hincha),
+Para este proyecto me inspire en el sitio web oficial de adidas donde vendian indumentaria deportiva de Boca (club del que soy hincha),
 una vez orientado a como queria mi proyecto empece a afrontar los desafios de llevarlo a cabo. Fue un proceso largo y en algunos momentos
 dificil pero junto con la curso de React y el apoyo de tutores pude despejar mis dudas y seguir adelante.
 
